@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>KLINIK-LED</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.1.4/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/logo2.png" type="image/png">
+</head>
+
+<body oncontextmenu="return false;">
+    <div class="log hidden" id="log">
+        <h1>Log sementara</h1>
+    </div>
+    
+    <div class="container hidden">
+        <div class="arrow" onclick="scrollLeftt()">◄</div>
+        <div class="radio-container" id="radioContainer">
+            <input type="radio" id="option1" name="options" checked>
+            <label for="option1">1</label>
+
+            <input type="radio" id="option2" name="options">
+            <label for="option2">2</label>
+
+            <input type="radio" id="option3" name="options">
+            <label for="option3">3</label>
+
+            <input type="radio" id="option4" name="options" style="display: none;">
+            <label for="option4">4</label>
+ 
+        </div>
+        <div class="arrow" onclick="scrollRight()">►</div>
+    </div>
+
+    <div class="switch-container hidden">
+        <input type="radio" id="left" name="switch" class="switch-input" checked>
+        <label for="left" class="switch-label switch-label-left"> </label>
+        <span class="switch-text">Select<br>Display</span>
+
+        <input type="radio" id="right" name="switch" class="switch-input">
+        <label for="right" class="switch-label switch-label-right"> </label>
+    </div>
+    <div class="alert hidden">
+        <p>ANIMASI LCD TFT</p>
+    </div>
+    <div class="logo">
+        <img src="logo.png" alt="" srcset="">
+    </div>
+    <div id="loadingAlert"
+        style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.5); color: white; padding: 20px; border-radius: 5px; z-index: 9999; width: 300px; text-align: center;">
+        <p id="loadingMessage" style="font-size: 16px; margin-bottom: 10px;">Loading...</p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <div id="progressBar"
+                style="background-color: #ddd; height: 20px; border-radius: 10px; overflow: hidden; flex: 1; margin-right: 10px;">
+                <div id="progressIndicator" style="width: 0%; height: 100%; background-color: #4CAF50;"></div>
+            </div>
+            <span id="progressPercentage" style="font-size: 14px;">0%</span>
+        </div>
+        <p id="jmlData" style="font-size: 14px; margin-top: 10px;"></p>
+        <p id="timeRemaining" style="font-size: 14px; margin-top: 10px;"></p>
+    </div>
+
+    <div class="swiper mySwiper hidden">
+        <div class="swiper-wrapper ">
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="connect" onclick="connect()">
+        <img src="button.png" alt="" srcset="">
+    </div>
+    <div class="num hidden">
+        <p>1</p>
+    </div>
+    <div class="tabName hidden">
+        <p>1</p>
+    </div>
+    <div class="sizeData hidden"></div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.4/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,393 @@
+html,
+body {
+  user-select: none;
+  position: relative;
+  height: 100%;
+}
+
+#log {
+  border: 1px solid #000;
+  padding: 10px;
+  width: 300px;
+  height: 200px;
+  overflow-y: scroll;
+  background-color: #f9f9f9;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.connect {
+  width: 240px;
+  height: 240px;
+  position: absolute;
+  left: 50%;
+  top: 68%;
+  margin-left: -120px;
+  margin-top: -120px;
+  /* visibility: hidden; */
+}
+
+.connect img {
+  width: 100%;
+}
+
+.connect:active {
+  transform: scale(0.9);
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -o-transform: scale(0.9);
+}
+
+.swiper {
+  width: 240px;
+  height: 240px;
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  margin-left: -120px;
+  margin-top: -30px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  margin-left: -150px;
+  margin-top: -150px;
+  display: flex;
+  justify-content: center;
+  /* animation: zoomInOut 1s ease-in-out infinite; Animasi zoom in-out berulang */
+}
+
+.num {
+  position: absolute;
+  bottom: 30px;
+  /* Jarak dari bagian bawah */
+  left: 50%;
+  /* Pusat horizontal */
+  transform: translateX(-50%);
+  /* Pusat horizontal */
+  width: 40px;
+  /* Lebar elemen */
+  height: 40px;
+  /* Tinggi elemen */
+  border-radius: 50%;
+  /* Sudut bulat yang sempurna */
+  display: flex;
+  /* Mengaktifkan flexbox */
+  justify-content: center;
+  /* Memusatkan konten horizontal */
+  align-items: center;
+  /* Memusatkan konten vertical */
+  padding: 2px;
+  /* Padding untuk penampilan teks yang lebih baik */
+  color: rgb(0, 0, 0);
+  /* Warna teks */
+  background-color: #91ff00;
+  /* Warna latar belakang teks */
+  box-shadow: 0 0 0 3px rgb(0, 0, 0);
+  /* Outline dengan box-shadow */
+  transition: background-color 0.3s ease;
+  /* Transisi warna latar belakang */
+  font-size: 30px;
+  /* Ukuran teks */
+  font-family: 'Roboto', sans-serif;
+  /* Font teks menggunakan Roboto */
+  font-weight: bold;
+  /* Tebal */
+}
+
+.sizeData {
+  position: absolute;
+  bottom: 350px;
+  /* Jarak dari bagian bawah */
+  left: 50%;
+  /* Pusat horizontal */
+  transform: translateX(-50%);
+  /* Pusat horizontal */
+  display: inline-block;
+  /* Atau gunakan block jika ingin elemen memakan seluruh lebar kontainer */
+  display: flex;
+  /* Mengaktifkan flexbox */
+  justify-content: center;
+  /* Memusatkan konten horizontal */
+  align-items: center;
+  /* Memusatkan konten vertical */
+  padding: 2px;
+  /* Padding untuk penampilan teks yang lebih baik */
+  color: rgb(0, 0, 0);
+  /* Warna teks */
+  box-shadow: 0 0 0 3px rgb(0, 0, 0);
+  /* Outline dengan box-shadow */
+  transition: background-color 0.3s ease;
+  /* Transisi warna latar belakang */
+  font-size: 30px;
+  /* Ukuran teks */
+  font-family: 'Roboto', sans-serif;
+  /* Font teks menggunakan Roboto */
+  font-weight: bold;
+  /* Tebal */
+}
+
+.num:hover {
+  background-color: #2980b9;
+  /* Warna latar belakang saat hover */
+  transform: translateX(-50%) scale(1.1);
+  /* Perbesar elemen saat hover */
+}
+
+
+.logo img {
+  width: 100%;
+  max-width: 300px;
+}
+
+.alert {
+  background-color: greenyellow;
+  position: absolute;
+  top: 1%;
+  width: 80%;
+  height: auto;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  font-size: medium;
+  text-align: center;
+  z-index: 9999;
+  /* Menambahkan properti z-index supaya didepan trs*/
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+
+
+
+/* SWITCH PILIH LCD */
+
+.switch-container {
+  left: 50%;
+  /* Pusat horizontal */
+  top: 30%;
+  /* Pusat vertikal */
+  transform: translate(-50%, -50%);
+  /* Pusat horizontal dan vertikal menggunakan translate */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+  /* Lebar container */
+  border: none;
+  /* Menghilangkan border */
+  overflow: hidden;
+  position: absolute;
+}
+
+.switch-label {
+  user-select: none;
+  display: block;
+  width: 70px;
+  /* Lebar label */
+  height: 70px;
+  /* Tinggi label */
+  text-align: center;
+  line-height: 50px;
+  /* Menengahkan teks secara vertikal */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-size: cover;
+  background-position: center;
+  border: none;
+  /* Menghilangkan border */
+  /* box-shadow: 0 10px 10px rgb(0, 0, 0); Efek shadow */
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  /* Efek transisi */
+}
+
+@keyframes zoomInOut {
+
+  0%,
+  100% {
+    transform: scale(1);
+    /* Skala normal */
+  }
+
+  50% {
+    transform: scale(1.1);
+    /* Skala lebih besar */
+  }
+}
+
+.switch-label:hover {
+  background-color: #f0f0f0;
+}
+
+.switch-label:first-child {
+  border-right: 1px solid #cccccc;
+}
+
+.switch-input {
+  display: none;
+}
+
+.switch-input:checked+.switch-label {
+  background-color: #007bff;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  /* Efek shadow saat switch dipilih */
+  transform: scale(1.1);
+  /* Efek skala saat switch dipilih */
+  animation: zoomInOut 1s ease-in-out infinite;
+  /* Animasi zoom in-out berulang */
+}
+
+.switch-label-left {
+  background-image: url('left.png');
+  /* Path ke gambar latar belakang untuk switch kiri */
+}
+
+.switch-label-right {
+  background-image: url('right.png');
+  /* Path ke gambar latar belakang untuk switch kanan */
+}
+
+.switch-text {
+  font-size: 20px;
+  /* Ukuran teks */
+  font-weight: bold;
+  /* Tebal teks */
+  text-transform: uppercase;
+  /* Huruf kapital */
+  margin-top: 8px;
+  /* Jarak atas teks dari latar belakang */
+  text-align: center;
+  /* Rata tengah teks */
+  color: #000000;
+  /* Warna teks */
+  text-shadow: 0 0 3px #fff, 0 0 5px #0066ff;
+  /* Outline teks */
+}
+
+/* END */
+
+
+
+/* ///////////////////////////////////////////////////////Untuk TAB */
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.radio-container {
+  display: flex;
+  overflow-x: hidden;
+  width: 160px;
+  /* Adjust based on the number of visible buttons */
+}
+
+.radio-container input[type="radio"] {
+  display: none;
+}
+
+.radio-container label {
+  user-select: none;
+  background-color: #4CAF50;
+  color: white;
+  border: 3px solid transparent;
+  /* Garis outline */
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 50px;
+  height: 20px;
+  line-height: center;
+  transition: background-color 0.3s, border-color 0.3s;
+  /* Transisi warna latar dan garis outline */
+}
+
+.radio-container input[type="radio"]:checked+label {
+  background-color: #45a049;
+  border-color: #333;
+  /* Warna garis outline saat tombol dipilih */
+}
+
+.arrow {
+  cursor: pointer;
+  font-size: 24px;
+  user-select: none;
+  padding: 10px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00aeff;
+  border-radius: 4px;
+  margin: 0 10px;
+  transition: background-color 0.3s;
+}
+
+.arrow:hover {
+  background-color: #00aeff;
+}
+
+.tabName {
+  position: absolute;
+  bottom: 395px;
+  /* Sesuaikan jarak dari bagian bawah sesuai kebutuhan */
+  left: 50%;
+  /* Pusat horizontal */
+  transform: translateX(-50%);
+  /* Pusat horizontal */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  color: #0095da;
+  transition: background-color 0.3s ease;
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  white-space: nowrap; 
+  text-decoration: underline; 
+  text-decoration-color: #000;
+  text-decoration-style: dashed;
+}
+
+/* ENDS */
